@@ -1,47 +1,56 @@
-# Svelte + Vite
+# Projeto de Conclusão - Caça Palavras
 
-This template should help get you started developing with Svelte in Vite.
+Este é o projeto de conclusão da disciplina de Lógica de Programação e Estrutura de Dados do IFPE Igarassu, desenvolvido por Gilvan Paes e Jamilly Silva. O projeto consiste em um jogo de caça palavras, implementado utilizando as tecnologias Svelte, HTML5 e CSS3.
 
-## Recommended IDE Setup
+## Funcionalidades
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+O jogo possui três abas principais:
 
-## Need an official Svelte framework?
+### 1. Aba "Jogar"
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+Nesta aba, o jogador pode interagir com o caça palavras. O objetivo é encontrar palavras escondidas em uma grade de letras. O jogador pode digitar as palavras que acredita ter encontrado e, caso elas estejam presentes no caça palavras, será exibida uma mensagem de vitória.
 
-## Technical considerations
+### 2. Aba "Ajuda"
 
-**Why use this over SvelteKit?**
+Nesta aba, o jogador pode obter informações sobre como jogar o caça palavras. São fornecidas instruções detalhadas sobre as regras do jogo, bem como dicas para melhorar o desempenho durante a busca por palavras.
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+### 3. Aba "Sobre"
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+Nesta aba, são apresentadas informações sobre o projeto e seus desenvolvedores. É uma oportunidade para conhecer mais sobre o contexto e os responsáveis pela criação do jogo de caça palavras.
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+## Tecnologias Utilizadas
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+- Svelte: um framework JavaScript para a construção de interfaces de usuário reativas.
+- HTML5: a linguagem de marcação padrão para a criação de páginas web.
+- CSS3: a linguagem de estilos utilizada para a estilização das páginas web.
 
-**Why include `.vscode/extensions.json`?**
+## Instruções para Execução
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+Para executar o projeto em sua máquina local, siga as instruções abaixo:
 
-**Why enable `checkJs` in the JS template?**
+1. Certifique-se de ter o Node.js instalado em seu computador. Caso não o tenha, faça o download e a instalação a partir do site oficial do Node.js (https://nodejs.org).
+2. Clone o repositório do projeto para o seu computador.
+3. Abra o terminal ou prompt de comando e navegue até o diretório do projeto.
+4. Execute o seguinte comando para instalar as dependências do projeto:
+   ```
+   npm install
+   ```
+5. Após a conclusão da instalação das dependências, execute o seguinte comando para iniciar o servidor de desenvolvimento:
+   ```
+   npm run dev
+   ```
+6. O servidor será iniciado e o jogo de caça palavras estará acessível em seu navegador através do endereço `http://localhost:5173`.
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+## Considerações Finais
 
-**Why is HMR not preserving my local component state?**
+Este projeto de conclusão foi desenvolvido com o intuito de aplicar os conhecimentos adquiridos durante a disciplina de Lógica de Programação e Estrutura de Dados. O jogo de caça palavras foi implementado utilizando as tecnologias Svelte, HTML5 e CSS3, oferecendo uma experiência interativa e divertida para os jogadores.
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+Esperamos que você se divirta jogando o caça palavras e que este projeto possa contribuir para o seu aprendizado em programação e estrutura de dados.
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+Agradecemos pela oportunidade de apresentar nosso trabalho e estamos disponíveis para quaisquer esclarecimentos adicionais.
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+Equipe de Desenvolvimento:
+Gilvan Paes
+Jamilly Silva
