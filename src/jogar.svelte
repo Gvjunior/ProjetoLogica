@@ -2,13 +2,13 @@
   import { bubble } from "svelte/internal";
   import { trocarEstadoDoJogo } from "./Estado.js";
   let puzzle = [
-    ["B", "O", "L", "A", "I", "A", "X"],
-    ["R", "A", "Q", "U", "E", "T", "E"],
-    ["M", "E", "S", "A", "F", "G", "S"],
-    ["J", "O", "G", "A", "D", "O", "R"],
-    ["P", "A", "R", "T", "I", "D", "A", "D"],
+    ["B", "M", "T", "A", "I", "T", "J"],
+    ["O", "E", "E", "O", "E", "O", "O"],
+    ["L", "S", "N", "N", "G", "L", "A"],
+    ["P", "A", "I", "A", "R", "O", "I"],
+    ["P", "S", "R", "T", "I", "D", "R", "R"],
   ];
-  let palavras = ["bola", "raquete", "mesa", "jogador", "partida"];
+  let palavras = ["bola", "tenis", "mesa", "jogar",];
 
   let selecionePalavras = "";
   let selecioneLetras = [];
