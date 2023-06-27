@@ -1,23 +1,24 @@
 <script>
   import { bubble } from "svelte/internal";
   import { trocarEstadoDoJogo } from "./Estado.js";
-  
+
   let tema = "Esporte";
-  
+
   let puzzle = [
     ["B", "M", "T", "A", "I", "T", "J"],
     ["O", "E", "E", "O", "E", "O", "O"],
     ["L", "S", "N", "N", "G", "L", "A"],
     ["A", "A", "I", "O", "R", "O", "I"],
-    ["P", "S", "S", "T", "I", "D", "R",],
+    ["P", "S", "S", "T", "I", "D", "R"],
   ];
-  
+
   let palavras = ["bola", "tenis", "mesa", "jogo"];
   let palavrasRestantes = palavras.length;
-  
+  let palavrasEncontradas = [];
+
   let selecionePalavras = "";
   let selecioneLetras = [];
-  
+
   function slecionarLetra(i, j) {
     if (selecioneLetras.length === 0) {
       selecioneLetras.push({ i, j });
@@ -26,7 +27,7 @@
       let dx = Math.abs(ultimasLetras.i - i);
       let dy = Math.abs(ultimasLetras.j - j);
       let movimentoValido = (dx === 1 && dy === 0) || (dx === 0 && dy === 1);
-  
+
       if (movimentoValido) {
         selecioneLetras.push({ i, j });
       } else {
@@ -34,35 +35,35 @@
         selecioneLetras.push({ i, j });
       }
     }
-  
+
     let palavra = "";
     for (const { i, j } of selecioneLetras) {
       palavra += puzzle[i][j];
     }
-  
-    if (palavras.includes(palavra)) {
+
+    if (palavras.includes(palavra) && !palavrasEncontradas.includes(palavra)) {
       selecionePalavras = palavra;
       selecioneLetras = [];
-  
-      // Remover a palavra encontrada da lista de palavras restantes
+
+      palavrasEncontradas.push(palavra);
       palavrasRestantes--;
     }
   }
-  
+
   function checagemDeDigito(digito) {
     const palavraDigitada = digito.target.value.toLowerCase();
-  
-    if (palavras.includes(palavraDigitada)) {
+
+    if (palavras.includes(palavraDigitada) && !palavrasEncontradas.includes(palavraDigitada)) {
       selecionePalavras = palavraDigitada;
       selecioneLetras = [];
-  
-      // Remover a palavra encontrada da lista de palavras restantes
+
+      palavrasEncontradas.push(palavraDigitada);
       palavrasRestantes--;
     } else {
       selecioneLetras = [];
     }
   }
-  
+
   function todasPalavrasEncontradas() {
     return palavrasRestantes === 0;
   }
@@ -89,7 +90,7 @@
       {/each}
     </div>
   </div>
-  
+
   <div class="info">
     <p>Escreva a palavra:</p>
     <input type="text" on:input={checagemDeDigito} />
@@ -112,24 +113,24 @@
 
 <style>
   /* Estilos do jogo */
-  
+
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .container {
     margin-top: 20px;
   }
-  
+
   .puzzle {
     display: grid;
     grid-template-columns: repeat(7, 40px);
     grid-template-rows: repeat(5, 40px);
     gap: 4px;
   }
-  
+
   .cell {
     display: flex;
     justify-content: center;
@@ -140,55 +141,31 @@
     font-size: 18px;
     font-weight: bold;
   }
-  
+
   .selected {
     background-color: red;
   }
-  
+
   .correct {
     background-color: #70c090;
   }
-  
+
   .info {
     margin-top: 20px;
     text-align: center;
   }
-  
+
   .palavra {
     font-size: 20px;
     margin-top: 16px;
     font-weight: bold;
     color: #70c090;
   }
-  
+
   .mensagem-final {
     font-size: 20px;
     margin-top: 16px;
     font-weight: bold;
     color: #70c090;
-  }
-  
-  /* Estilos da tabela */
-  
-  table {
-    margin-top: 20px;
-    border-collapse: collapse;
-    width: 200px;
-  }
-  
-  th {
-    background-color: #70c090;
-    color: white;
-    font-weight: bold;
-    padding: 8px;
-  }
-  
-  td {
-    padding: 8px;
-    text-align: center;
-  }
-  
-  .menu {
-    margin-top: 20px;
   }
 </style>
