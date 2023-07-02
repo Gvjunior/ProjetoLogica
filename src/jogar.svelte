@@ -7,7 +7,7 @@
   let puzzle = [
     ["B", "M", "T", "A", "I", "T", "J"],
     ["O", "E", "E", "O", "E", "O", "O"],
-    ["L", "S", "N", "N", "G", "L", "A"],
+    ["L", "S", "G", "N", "G", "L", "A"],
     ["A", "A", "I", "O", "R", "O", "I"],
     ["P", "S", "S", "T", "I", "D", "R"],
   ];
@@ -113,7 +113,7 @@
 
 <style>
   /* Estilos do jogo */
-
+  
   main {
     display: flex;
     flex-direction: column;
